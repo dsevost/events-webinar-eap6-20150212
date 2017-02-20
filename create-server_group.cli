@@ -1,0 +1,6 @@
+batch
+/server-group=example-server-group:add(profile=full-ha,socket-binding-group=full-ha-sockets)
+/host=master/server-config=ex01:add(group=example-server-group,socket-binding-port-offset=1000,auto-start=true)
+/host=node1/server-config=ex02:add(group=example-server-group,socket-binding-port-offset=1000,auto-start=true)
+/host=node2/server-config=ex03:add(group=example-server-group,socket-binding-port-offset=1000,auto-start=true)
+run-batch

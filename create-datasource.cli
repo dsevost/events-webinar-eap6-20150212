@@ -1,0 +1,11 @@
+batch
+
+cd /profile=full-ha/subsystem=datasources
+./data-source=PostgresDS:add(jndi-name="java:jboss/PostgresDS", \
+    connection-url="jdbc:postgresql://localhost:5432/postgres", \
+    user-name="postgres", password="postgres", driver-name="postgresql.jar")
+
+cd ./data-source=PostgresDS
+:write-attribute(name=enabled, value=true)
+
+run-batch
